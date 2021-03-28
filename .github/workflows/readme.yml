@@ -20,7 +20,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Setup dependencies
+        run: npm i @actions/github @actions/core
       - uses: ./.github/actions/readme
         with:
           who-to-greet: 'Mona the Octocat'
