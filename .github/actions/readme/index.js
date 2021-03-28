@@ -12,11 +12,12 @@ try {
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
 
-  const content = fs.readFileSync('README.md', 'utf-8');
-  console.log('README BEFORE', content);
-  fs.writeFileSync('README.md', content + '\n\nHELLO FROM CUSTOM ACTION\n\n');
-  const after = fs.readFileSync('README.md', 'utf-8');
-  console.log('README AFTER', after);
+  const content = fs.readFileSync('./README.md', 'utf-8');
+  // console.log('README BEFORE', content);
+  // fs.writeFileSync('~/README.md', content + '\n\nHELLO FROM CUSTOM ACTION\n\n');
+  // const after = fs.readFileSync('~/README.md', 'utf-8');
+  // console.log('README AFTER', after);
+  core.setOutput("readme", content + '\n\nHELLO FROM CUSTOM ACTION\n\n');
 } catch (error) {
   core.setFailed(error.message);
 }

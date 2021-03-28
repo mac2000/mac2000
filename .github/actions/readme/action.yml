@@ -1,5 +1,8 @@
 name: readme
 description: fill readme with stats
+outputs:
+  readme:
+    description: filled readme
 runs:
   using: node12
   main: index.js
