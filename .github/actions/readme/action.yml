@@ -5,7 +5,7 @@ inputs:
     description: wakatime api key https://wakatime.com/settings/account
     required: true
   github:
-    description: github, e.g. ${{ secrets.GITHUB_TOKEN }}
+    description: github, e.g. secrets dot GITHUB_TOKEN
     required: true
 outputs:
   readme:
