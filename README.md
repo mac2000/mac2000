@@ -6,14 +6,21 @@
 | Stats         |     |
 | ------------- | --: |
 | requests      |  86 |
-| commits       | 641 |
+| commits       | 642 |
 | issues        |  86 |
 | stars         |  89 |
 | contributions |  21 |
 <!-- github stats end -->
 
 <!-- github langs start -->
-
+| %      | Language   |
+| -----: | ---------- |
+| 43.12% | C#         |
+| 17.62% | JavaScript |
+| 14.15% | TypeScript |
+| 10.77% | Python     |
+|  7.34% | Java       |
+|  7.00% | Other      |
 <!-- github langs end -->
 
 According to [wakatime report](https://wakatime.com/@mac), last month I used to code with following
@@ -54,6 +61,7 @@ According to [wakatime report](https://wakatime.com/@mac), last month I used to 
 ![GitHub](https://github-readme-stats.vercel.app/api?username=mac2000&count_private=true&hide_title=true)
 
 ![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mac2000&hide_title=true)
+
 
 
 
