@@ -28,6 +28,8 @@ jobs:
         run: npm i @actions/github @actions/core
       - uses: ./.github/actions/readme
       - uses: actions/checkout@v2
+        with:
+          clean: 'false'
       - run: |
           cat README.md
           date >> README.md
