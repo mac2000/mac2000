@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    if: ${{ github.actor != 'actions' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -28,3 +29,11 @@ jobs:
       - uses: ./.github/actions/readme
         with:
           who-to-greet: 'Mona the Octocat'
+      - uses: actions/checkout@v2
+      - run: |
+          date >> README.md
+          git config user.name actions
+          git config user.email actions@github.com
+          git add README.md
+          git commit -m "generated"
+          git push
