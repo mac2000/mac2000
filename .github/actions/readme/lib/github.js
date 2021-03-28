@@ -52,6 +52,24 @@ const LANGUAGES_QUERY = `
 }  
 `
 
+const CONTRIBUTIONS_QUERY = `
+{
+    search(query: "is:merged is:pr is:public archived:false author:mac2000", type: ISSUE, first: 10) {
+        edges {
+            node {
+                ... on PullRequest {
+                    title
+                    url
+                    repository {
+                        nameWithOwner
+                    }
+                }
+            }
+        }
+    }
+}
+`
+
 const query = async query => await postJson('https://api.github.com/graphql', { query }, {
     'Authorization': 'Bearer ' + core.getInput('github'),
     'User-Agent': 'ReadmeAction/1.0 (https://github.com/mac2000/mac2000/tree/main/.github/actions/readme)'
@@ -103,8 +121,15 @@ const langs = async () => {
     return top5
 }
 
+const contributions = async () => {
+    const {data: {search: { edges }}} = await query(CONTRIBUTIONS_QUERY)
+
+    return edges.map(({node: {title, url, repository: {nameWithOwner}}}) => ({title, url, repo: nameWithOwner})).map(({title, url, repo}) => ({repo, pr: `[${title}](${url})`}))
+}
+
 module.exports = {
     query,
     stats,
-    langs
+    langs,
+    contributions
 }

@@ -36,9 +36,19 @@ const statisticsConfig = {
     }
 }
 
+const contributionsConfig = {
+    repo: {
+        name: 'Repository'
+    },
+    pr: {
+        name: 'Contribution'
+    }
+}
+
 module.exports = {
     languagesConfig,
     platformsConfig,
     editorsConfig,
-    statisticsConfig
+    statisticsConfig,
+    contributionsConfig
 }
