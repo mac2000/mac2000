@@ -4,6 +4,9 @@ inputs:
   wakatime:
     description: wakatime api key https://wakatime.com/settings/account
     required: true
+  github:
+    description: github, e.g. ${{ secrets.GITHUB_TOKEN }}
+    required: true
 outputs:
   readme:
     description: filled readme

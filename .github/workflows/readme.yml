@@ -28,7 +28,8 @@ jobs:
         uses: ./.github/actions/readme
         with:
           wakatime: ${{ secrets.WAKATIME_API_KEY }}
-      
+          github: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: actions/checkout@v2
       - run: |
           cat > README.md << EOF
