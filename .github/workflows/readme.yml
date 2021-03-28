@@ -26,6 +26,8 @@ jobs:
       - name: node ./.github/actions/readme/index.js
         id: readme
         uses: ./.github/actions/readme
+        with:
+          wakatime: ${{ secrets.WAKATIME_API_KEY }}
       
       - uses: actions/checkout@v2
       - run: |

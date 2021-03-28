@@ -1,5 +1,9 @@
 name: readme
 description: fill readme with stats
+inputs:
+  wakatime:
+    description: wakatime api key https://wakatime.com/settings/account
+    required: true
 outputs:
   readme:
     description: filled readme
