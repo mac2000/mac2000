@@ -1,4 +1,7 @@
+const core = require('@actions/core')
 const { getJson } = require('./http')
+
+const key = process.env ? process.env.WAKATIME_API_KEY : core.getInput('wakatime')
 
 const process = items => items
     .splice(0, 5)
@@ -9,7 +12,7 @@ const process = items => items
     )
     .map(({ name, percent }) => ({ name, percent }))
 
-const wakatime = async () => await getJson(`https://wakatime.com/api/v1/users/mac/stats/last_30_days?api_key=${process.env ? process.env.WAKATIME_API_KEY : core.getInput('wakatime')}`).then(({ data }) => ({
+const wakatime = async () => await getJson(`https://wakatime.com/api/v1/users/mac/stats/last_30_days?api_key=${key}`).then(({ data }) => ({
     languages: process(data.languages),
     platforms: process(data.operating_systems),
     editors: process(data.editors),
