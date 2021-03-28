@@ -32,6 +32,26 @@ const STATS_QUERY = `
 } 
 `
 
+const LANGUAGES_QUERY = `
+{
+    user(login: "mac2000") {
+        repositories(ownerAffiliations: OWNER, first: 100, orderBy: {field: STARGAZERS, direction: DESC}) {
+            nodes {
+                languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+                    edges {
+                        size
+                        node {
+                            color
+                            name
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  
+`
+
 const query = async query => await postJson('https://api.github.com/graphql', { query }, {
     'Authorization': 'Bearer ' + core.getInput('github'),
     'User-Agent': 'ReadmeAction/1.0 (https://github.com/mac2000/mac2000/tree/main/.github/actions/readme)'
@@ -49,7 +69,42 @@ const stats = async () => {
     };
 }
 
+const langs = async () => {
+    const {data: {user: {repositories: {nodes}}}} = await query(LANGUAGES_QUERY)
+
+    const repositories = nodes
+        .map(({languages: { edges }}) => edges)
+        .reduce((a,b) => a.concat(b), [])
+        .map(({size, node: {name}}) => ({name, size}))
+
+    const sums = repositories.map(({size}) => size).reduce((a, b) => a + b, 0)
+        
+    const percents = repositories
+        .map(({name, size}) => ({ name, percent: size / sums * 100 }))
+        .reduce((acc, x) => {
+            const found = acc.find(i => i.name === x.name)
+            
+            if(found) {
+                found.percent += x.percent
+            } else {
+                acc.push({ name: x.name, percent: x.percent })
+            }
+            return acc
+        }, [])
+        .map(({name, percent}) => ({name, percent: parseFloat(percent.toFixed(2))}))
+        .sort((a,b) => (a.percent > b.percent) ? -1 : ((b.percent > a.percent) ? 1 : 0))
+
+    const top5 = percents
+        .splice(0, 5)
+        .concat(percents.reduce((acc, x) => { acc.percent = parseFloat((acc.percent + x.percent).toFixed(2)); return acc; }, { name: 'Other', percent: 0.0 }))
+        .filter(({ percent }) => !!percent)
+        .map(({ name, percent }) => ({ name, percent }))
+
+    return top5
+}
+
 module.exports = {
     query,
-    stats
+    stats,
+    langs
 }
