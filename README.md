@@ -1,8 +1,6 @@
 ### Hi there 👋
 
-<svg height="100" width="100">
-  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-</svg>
+<img src="icon.svg" style="width:100%;height:auto">
 
 ### Last contributions
 
@@ -27,7 +25,7 @@
 | Stats         |     |
 | ------------- | --: |
 | requests      |  86 |
-| commits       | 644 |
+| commits       | 643 |
 | issues        |  86 |
 | stars         |  89 |
 | contributions |  21 |
@@ -82,7 +80,6 @@ According to [wakatime report](https://wakatime.com/@mac), last month I used to 
 ![GitHub](https://github-readme-stats.vercel.app/api?username=mac2000&count_private=true&hide_title=true)
 
 ![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mac2000&hide_title=true)
-
 
 
 
