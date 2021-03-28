@@ -1,5 +1,7 @@
 ### Hi there 👋
 
+<div style="border: 1px solid black;padding:5px;">
+
 <!-- wakatime languages start -->
 | %      | Language |
 | -----: | -------- |
@@ -26,6 +28,8 @@
 |  4.18% | Mac      |
 <!-- wakatime platforms end -->
 
+
+</div>
 
 ![GitHub](https://github-readme-stats.vercel.app/api?username=mac2000&count_private=true&hide_title=true)
 
