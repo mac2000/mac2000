@@ -13,8 +13,10 @@ try {
   //console.log(`The event payload: ${payload}`);
 
   const content = fs.readFileSync('README.md', 'utf-8');
-  console.log('README', content);
+  console.log('README BEFORE', content);
   fs.writeFileSync('README.md', content + '\n\nHELLO FROM CUSTOM ACTION\n\n');
+  const after = fs.readFileSync('README.md', 'utf-8');
+  console.log('README AFTER', after);
 } catch (error) {
   core.setFailed(error.message);
 }
