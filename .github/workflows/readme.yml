@@ -29,7 +29,7 @@ jobs:
       
       - uses: actions/checkout@v2
       - run: |
-          cat > README.md << EOL
+          cat > README.md << EOF
           ${{ steps.readme.outputs.readme }}
           EOF
           git config user.name actions
