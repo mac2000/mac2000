@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  readme:
     if: ${{ github.actor != 'actions' }}
     runs-on: ubuntu-latest
 
@@ -23,14 +23,13 @@ jobs:
           echo test, and deploy your project.
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '12'
       - name: Setup dependencies
         run: npm i @actions/github @actions/core
       - uses: ./.github/actions/readme
-        with:
-          who-to-greet: 'Mona the Octocat'
       - uses: actions/checkout@v2
       - run: |
+          cat README.md
           date >> README.md
           git config user.name actions
           git config user.email actions@github.com
