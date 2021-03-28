@@ -1,6 +1,8 @@
 ### Hi there 👋
 
-<img src="icon.svg" style="width:100%;height:auto">
+<img src="icon.svg" />
+
+<img src="icon.svg" width="24" />
 
 ### Last contributions
 
