@@ -4,7 +4,8 @@
   "description": "fill readme with stats",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha **/*.spec.js"
   },
   "keywords": [],
   "author": "Alexandr Marchenko <marchenko.alexandr@gmail.com>",
@@ -12,5 +13,8 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2"
   }
 }
