@@ -82,4 +82,23 @@ describe('table', () => {
         const actual = table(arr, opt)
         assert.strictEqual(actual, expected)
     })
+
+    it('should use keys if name not given', () => {
+        const opt = {
+            percent: {
+            },
+            name: {
+            }
+        }
+
+        const expected = strip(`
+        | percent | name    |
+        | ------- | ------- |
+        | 95.82   | Windows |
+        | 4.18    | Mac     |
+        `)
+
+        const actual = table(arr, opt)
+        assert.strictEqual(actual, expected)
+    })
 })

@@ -26,8 +26,19 @@ const editorsConfig = {
     }
 }
 
+const statisticsConfig = {
+    key: {
+        name: 'Stats'
+    },
+    val: {
+        name: ' ',
+        alignRight: true
+    }
+}
+
 module.exports = {
     languagesConfig,
     platformsConfig,
-    editorsConfig
+    editorsConfig,
+    statisticsConfig
 }
