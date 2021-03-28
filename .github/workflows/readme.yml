@@ -35,5 +35,5 @@ jobs:
           git config user.name actions
           git config user.email actions@github.com
           git add README.md
-          git commit -m "generated"
+          git commit -m "readme"
           git push
