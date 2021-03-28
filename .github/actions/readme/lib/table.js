@@ -17,7 +17,7 @@ const table = (arr, cfg) => {
 
 
     const header = '| ' + Object.keys(cfg).map(key => cfg[key].name.padEnd(cfg[key].max)).join(' | ') + ' |'
-    const divider = '| ' + Object.keys(cfg).map(key => '-'.padEnd(cfg[key].max, '-')).join(' | ') + ' |'
+    const divider = '| ' + Object.keys(cfg).map(key => '-'.padEnd(cfg[key].max -1, '-') + (cfg[key].alignRight ? ':' : '-')).join(' | ') + ' |'
 
     lines.unshift(divider)
     lines.unshift(header)

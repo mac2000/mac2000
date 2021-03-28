@@ -30,7 +30,7 @@ describe('table', () => {
     it('should return table', () => {
         const expected = strip(`
         | %      | Platform |
-        | ------ | -------- |
+        | -----: | -------- |
         | 95.82% | Windows  |
         |  4.18% | Mac      |
         `)
@@ -48,7 +48,7 @@ describe('table', () => {
 
         const expected = strip(`
         | %      | OS      |
-        | ------ | ------- |
+        | -----: | ------- |
         | 95.82% | Windows |
         |  4.18% | Mac     |
         `)
@@ -74,7 +74,7 @@ describe('table', () => {
 
         const expected = strip(`
         | Percent | Platform |
-        | ------- | -------- |
+        | ------: | -------: |
         |  95.82% |  Windows |
         |   4.18% |      Mac |
         `)
