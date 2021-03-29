@@ -22,24 +22,15 @@
 ### Some github stats
 
 <!-- github stats start -->
-| Stats         |     |
-| ------------- | --: |
-| requests      |  86 |
-| commits       | 645 |
-| issues        |  86 |
-| stars         |  89 |
-| contributions |  21 |
+|  requests | commits |  issues | stars | contributions |
+| :-------: | :-----: | :-----: | :---: | :-----------: |
+|     86    |   666   |    86   |   89  |       21      |
 <!-- github stats end -->
 
 <!-- github langs start -->
-| %      | Language   |
-| -----: | ---------- |
-| 43.12% | C#         |
-| 17.63% | JavaScript |
-| 14.15% | TypeScript |
-| 10.77% | Python     |
-|  7.34% | Java       |
-|  7.00% | Other      |
+|    C#   |  JavaScript |  TypeScript |  Python |  Java | Other |
+| :-----: | :---------: | :---------: | :-----: | :---: | :---: |
+|  43.12% |    17.63%   |    14.15%   |  10.77% | 7.34% |   7%  |
 <!-- github langs end -->
 
 According to [wakatime report](https://wakatime.com/@mac), last month I used to code with following
@@ -47,39 +38,32 @@ According to [wakatime report](https://wakatime.com/@mac), last month I used to 
 ### Languages
 
 <!-- wakatime languages start -->
-| %      | Language |
-| -----: | -------- |
-| 44.77% | Java     |
-| 32.56% | C#       |
-|  5.04% | YAML     |
-|  3.64% | HTML     |
-|  2.68% | CSHTML   |
-| 11.32% | Other    |
+|   Java  |    C#   |  HTML |  YAML |  JavaScript |  Other  |
+| :-----: | :-----: | :---: | :---: | :---------: | :-----: |
+|  43.62% |  31.23% | 3.54% | 3.47% |    3.32%    |  14.81% |
 <!-- wakatime languages end -->
 
 ### Editors
 
 <!-- wakatime editors start -->
-| %      | Editors  |
-| -----: | -------- |
-| 56.20% | IntelliJ |
-| 38.24% | Rider    |
-|  5.56% | VS Code  |
+|  IntelliJ |  Rider  | VS Code |
+| :-------: | :-----: | :-----: |
+|   55.68%  |  36.74% |  7.58%  |
 <!-- wakatime editors end -->
 
 ### Platforms
 
 <!-- wakatime platforms start -->
-| %      | Platform |
-| -----: | -------- |
-| 95.82% | Windows  |
-|  4.18% | Mac      |
+| Windows |  Mac  |
+| :-----: | :---: |
+|  98.51% | 1.49% |
 <!-- wakatime platforms end -->
 
 
 ![GitHub](https://github-readme-stats.vercel.app/api?username=mac2000&count_private=true&hide_title=true)
 
 ![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mac2000&hide_title=true)
+
 
 
 
