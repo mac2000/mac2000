@@ -27,15 +27,15 @@
 |     86    |   666   |    86   |   89  |       21      |
 <!-- github stats end -->
 
+According to github stats here are languages used in repositories under my account
+
 <!-- github langs start -->
 |    C#   |  JavaScript |  TypeScript |  Python |  Java | Other |
 | :-----: | :---------: | :---------: | :-----: | :---: | :---: |
 |  43.12% |    17.63%   |    14.15%   |  10.77% | 7.34% |   7%  |
 <!-- github langs end -->
 
-According to [wakatime report](https://wakatime.com/@mac), last month I used to code with following
-
-### Languages
+and here are languages I'm used to code with for last month according to [wakatime report](https://wakatime.com/@mac)
 
 <!-- wakatime languages start -->
 |   Java  |    C#   |  HTML |  YAML |  JavaScript |  Other  |
@@ -43,7 +43,7 @@ According to [wakatime report](https://wakatime.com/@mac), last month I used to 
 |  43.62% |  31.23% | 3.54% | 3.47% |    3.32%    |  14.81% |
 <!-- wakatime languages end -->
 
-### Editors
+I'm coding in
 
 <!-- wakatime editors start -->
 |  IntelliJ |  Rider  | VS Code |
@@ -51,22 +51,10 @@ According to [wakatime report](https://wakatime.com/@mac), last month I used to 
 |   55.68%  |  36.74% |  7.58%  |
 <!-- wakatime editors end -->
 
-### Platforms
+I'm coding on
 
 <!-- wakatime platforms start -->
 | Windows |  Mac  |
 | :-----: | :---: |
 |  98.51% | 1.49% |
 <!-- wakatime platforms end -->
-
-
-![GitHub](https://github-readme-stats.vercel.app/api?username=mac2000&count_private=true&hide_title=true)
-
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mac2000&hide_title=true)
-
-
-
-
-
-
-
