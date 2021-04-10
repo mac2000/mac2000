@@ -83,6 +83,13 @@ const icons = {
         'Mac': 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
         'Windows': 'https://upload.wikimedia.org/wikipedia/commons/3/34/Windows_logo_-_2012_derivative.svg',
         'Linux': 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg',
+    },
+    stats: {
+        'requests': 'assets/icons/pullrequest.svg',
+        'commits': 'assets/icons/commit.svg',
+        'issues': 'assets/icons/issue.svg',
+        'stars': 'assets/icons/start.svg',
+        'contributions': 'assets/icons/merge.svg',
     }
 }
 

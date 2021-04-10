@@ -1,7 +1,5 @@
 ### Hi there 👋
 
-<img src="icon.svg" width="24" />
-
 ### Last contributions
 
 <!-- github contributions start -->

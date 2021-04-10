@@ -39,8 +39,22 @@ const editorIcons = editors => {
     return editors
 }
 
+const statIcons = stats => {
+    stats = Object.keys(stats).map(key => ({
+        key: key,
+        ico: key in icons.stats ? icons.stats[key] : icons.fallback,
+        val: stats[key]
+    })).map(({key, ico, val}) => ({
+        key: `<img src=${ico} width="24" height="24" alt="${key}" title=${key} />`,
+        val: val
+    })).reduce((obj, item) => Object.assign(obj, {[item.key]: item.val}), {})
+    
+    return stats
+}
+
 module.exports = {
     platformIcons,
     editorIcons,
-    languageIcons
+    languageIcons,
+    statIcons
 }
