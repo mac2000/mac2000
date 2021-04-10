@@ -6,6 +6,7 @@ const { stats, langs, contributions } = require('./lib/github')
 const { table } = require('./lib/table')
 const { horizont } = require('./lib/horizont')
 const { languagesConfig, platformsConfig, editorsConfig, statisticsConfig, contributionsConfig } = require('./lib/configs')
+const { platformIcons } = require('./lib/icons')
 
 try {
     const content = fs.readFileSync('README.md', 'utf-8')
@@ -14,6 +15,9 @@ try {
         platforms = Object.values(platforms).reduce((acc, x) => Object.assign(acc, {[x.name]: x.percent + '%'}), {})
         editors = Object.values(editors).reduce((acc, x) => Object.assign(acc, {[x.name]: x.percent + '%'}), {})
         langs = Object.values(langs).reduce((acc, x) => Object.assign(acc, {[x.name]: x.percent + '%'}), {})
+
+        platforms = platformIcons(platforms)
+
         const modified = content
             .replace(/(<!-- wakatime languages start -->)[\s\S]*(<!-- wakatime languages end -->)/g, '$1\n' + horizont(languages) + '\n$2')
             .replace(/(<!-- wakatime platforms start -->)[\s\S]*(<!-- wakatime platforms end -->)/g, '$1\n' + horizont(platforms) + '\n$2')
