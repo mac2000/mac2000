@@ -24,7 +24,7 @@
 <!-- github stats start -->
 |  requests | commits |  issues | stars | contributions |
 | :-------: | :-----: | :-----: | :---: | :-----------: |
-|     86    |   678   |    86   |   89  |       21      |
+|     86    |   839   |    86   |   89  |       21      |
 <!-- github stats end -->
 
 According to github stats here are languages used in repositories under my account
@@ -32,15 +32,15 @@ According to github stats here are languages used in repositories under my accou
 <!-- github langs start -->
 |    C#   |  JavaScript |  TypeScript |  Python |  Java | Other |
 | :-----: | :---------: | :---------: | :-----: | :---: | :---: |
-|  43.12% |    17.63%   |    14.15%   |  10.77% | 7.34% |   7%  |
+|  43.11% |    17.64%   |    14.15%   |  10.77% | 7.34% |   7%  |
 <!-- github langs end -->
 
 and here are languages I'm used to code with for last month according to [wakatime report](https://wakatime.com/@mac)
 
 <!-- wakatime languages start -->
-|   Java  |    C#   |  HTML |  YAML |  JavaScript |  Other  |
-| :-----: | :-----: | :---: | :---: | :---------: | :-----: |
-|  43.62% |  31.23% | 3.54% | 3.47% |    3.32%    |  14.81% |
+|   Java  |    C#   |  YAML |  JavaScript |  HTML |  Other  |
+| :-----: | :-----: | :---: | :---------: | :---: | :-----: |
+|  33.84% |  30.91% | 8.06% |    5.44%    | 4.88% |  16.87% |
 <!-- wakatime languages end -->
 
 I'm coding in
@@ -48,15 +48,16 @@ I'm coding in
 <!-- wakatime editors start -->
 |  IntelliJ |  Rider  | VS Code |
 | :-------: | :-----: | :-----: |
-|   55.68%  |  36.74% |  7.58%  |
+|   46.83%  |  40.24% |  12.93% |
 <!-- wakatime editors end -->
 
 I'm coding on
 
 <!-- wakatime platforms start -->
-| Windows |  Mac  |
-| :-----: | :---: |
-|  98.51% | 1.49% |
+|  <img src=https://upload.wikimedia.org/wikipedia/commons/3/34/Windows_logo_-_2012_derivative.svg width="24" height="24" alt="98.14%" /> | <img src=https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg width="24" height="24" alt="1.86%" /> |
+| :-------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
+|                                                                  98.14%                                                                 |                                                          1.86%                                                          |
 <!-- wakatime platforms end -->
+
 
 
