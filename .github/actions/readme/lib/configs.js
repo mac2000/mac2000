@@ -88,7 +88,7 @@ const icons = {
         'requests': 'assets/icons/pullrequest.svg',
         'commits': 'assets/icons/commit.svg',
         'issues': 'assets/icons/issue.svg',
-        'stars': 'assets/icons/start.svg',
+        'stars': 'assets/icons/star.svg',
         'contributions': 'assets/icons/merge.svg',
     }
 }
