@@ -25,7 +25,7 @@
 <!-- github stats start -->
 | <img src=assets/icons/pullrequest.svg width="24" height="24" alt="requests" title=requests /> |  <img src=assets/icons/commit.svg width="24" height="24" alt="commits" title=commits /> | <img src=assets/icons/issue.svg width="24" height="24" alt="issues" title=issues /> |  <img src=assets/icons/star.svg width="24" height="24" alt="stars" title=stars /> | <img src=assets/icons/merge.svg width="24" height="24" alt="contributions" title=contributions /> |
 | :-------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-|                                               88                                              |                                           2278                                          |                                          91                                         |                                         90                                        |                                                 14                                                |
+|                                               88                                              |                                           2331                                          |                                          91                                         |                                         91                                        |                                                 14                                                |
 <!-- github stats end -->
 
 According to github stats here are languages used in repositories under my account
@@ -59,6 +59,7 @@ I'm coding on
 | :---------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
 |                                                                         90.26%                                                                        |                                                              9.74%                                                              |
 <!-- wakatime platforms end -->
+
 
 
 
