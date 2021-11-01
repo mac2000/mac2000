@@ -19,23 +19,20 @@ jobs:
       - name: apt-get install -y node
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: 16.x
 
-      - name: npm i @actions/github @actions/core
-        run: npm i @actions/github @actions/core
+      - name: npm i
+        run: npm i
 
-      - name: node ./.github/actions/readme/index.js
-        id: readme
-        uses: ./.github/actions/readme
-        with:
-          wakatime: ${{ secrets.WAKATIME_API_KEY }}
-          github: ${{ secrets.GITHUB_TOKEN }}
+      - name: node index.js
+        eng:
+          WAKATIME_TOKEN: ${{ secrets.WAKATIME_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: cat README.md
 
       - uses: actions/checkout@v2
       - run: |
-          cat > README.md << EOF
-          ${{ steps.readme.outputs.readme }}
-          EOF
           git config user.name actions
           git config user.email actions@github.com
           git add README.md

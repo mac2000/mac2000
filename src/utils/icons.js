@@ -1,51 +1,6 @@
-const percent = {
-    name: '%',
-    alignRight: true,
-    digits: 2,
-    postfix: '%'
-}
+export const icon = (kind, key) => `<img src="${icons[kind]?.[key] || icons.fallback}" width="24" height="24" alt="${key}" title="${key}" />`
 
-const languagesConfig = {
-    percent,
-    name: {
-        name: 'Language'
-    }
-}
-
-const platformsConfig = {
-    percent,
-    name: {
-        name: 'Platform'
-    }
-}
-
-const editorsConfig = {
-    percent,
-    name: {
-        name: 'Editors'
-    }
-}
-
-const statisticsConfig = {
-    key: {
-        name: 'Stats'
-    },
-    val: {
-        name: ' ',
-        alignRight: true
-    }
-}
-
-const contributionsConfig = {
-    repo: {
-        name: 'Repository'
-    },
-    pr: {
-        name: 'Contribution'
-    }
-}
-
-const icons = {
+export const icons = {
     languages: {
         'Java': 'https://upload.wikimedia.org/wikipedia/ru/3/39/Java_logo.svg',
         'C#': 'https://upload.wikimedia.org/wikipedia/commons/a/a3/.NET_Logo.svg',
@@ -61,7 +16,7 @@ const icons = {
         'Groovy': 'https://upload.wikimedia.org/wikipedia/commons/3/36/Groovy-logo.svg',
         'PHP': 'https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg',
         'XML': 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Xml_logo.svg',
-        'CSS': 'https://ru.wikipedia.org/wiki/CSS#/media/%D0%A4%D0%B0%D0%B9%D0%BB:CSS3_logo_and_wordmark.svg',
+        'CSS': 'https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-256.png',
         'GraphQL': 'https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg',
         'Go': 'https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg',
         'Git': 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg',
@@ -73,11 +28,14 @@ const icons = {
     fallback: 'https://www.svgrepo.com/show/149905/txt-file-symbol.svg',
     editors: {
         'VS Code': 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg',
-        'IntelliJ': 'https://upload.wikimedia.org/wikipedia/commons/9/9c/IntelliJ_IDEA_Icon.svg',
         'Chrome': 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg',
         'Android Studio': 'https://upload.wikimedia.org/wikipedia/commons/8/8f/Breezeicons-apps-48-android-studio.svg',
-        'Rider': 'https://www.jetbrains.com/dotnet/promo/unity/img/rider-text.svg',
         'Browser': 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg',
+        // https://www.jetbrains.com/ru-ru/company/brand/
+        'WebStorm': 'https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm_icon.svg',
+        'IntelliJ': 'https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg',
+        'Rider': 'https://resources.jetbrains.com/storage/products/company/brand/logos/Rider_icon.svg',
+        'PyCharm': 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg',
     },
     platforms: {
         'Mac': 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
@@ -91,13 +49,4 @@ const icons = {
         'stars': 'assets/icons/star.svg',
         'contributions': 'assets/icons/merge.svg',
     }
-}
-
-module.exports = {
-    languagesConfig,
-    platformsConfig,
-    editorsConfig,
-    statisticsConfig,
-    contributionsConfig,
-    icons
 }
