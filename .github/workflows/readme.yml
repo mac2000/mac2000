@@ -21,10 +21,11 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: npm i
-        run: npm i
+      - name: npm install
+        run: npm install
 
       - name: node index.js
+        run: node index.js
         eng:
           WAKATIME_TOKEN: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
