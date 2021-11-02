@@ -33,6 +33,7 @@ jobs:
       - run: cat README.md
 
       - uses: actions/checkout@v2
+      - name: git commit README.md
       - run: |
           git config user.name actions
           git config user.email actions@github.com
