@@ -28,7 +28,7 @@ jobs:
         run: node index.js
         env:
           WAKATIME_TOKEN: ${{ secrets.WAKATIME_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - run: cat README.md
 
