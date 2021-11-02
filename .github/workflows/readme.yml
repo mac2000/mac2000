@@ -32,11 +32,13 @@ jobs:
 
       - run: cat README.md
 
-      - uses: actions/checkout@v2
-      - name: git commit README.md
-      - run: |
+      - name: git config
+        run: |
           git config user.name actions
           git config user.email actions@github.com
+
+      - name: git commit README.md
+        run: |
           git add README.md
           git commit -m "readme"
           git push
