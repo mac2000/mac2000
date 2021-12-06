@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import { markdownTable } from 'markdown-table'
 import {octokit} from './octokit.js'
 import {icon} from '../utils/icons.js'
@@ -34,6 +35,10 @@ const query = `
 `
 
 export const stats = token => octokit(token).graphql(query)
+.then(res => {
+  writeFileSync('assets/stats.json', JSON.stringify(res, null, 4), 'utf-8')
+  return res
+})
 .then(res => [[
     res?.user?.repositoriesContributedTo?.totalCount,
     res?.user?.contributionsCollection?.totalCommitContributions,

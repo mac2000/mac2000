@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import { markdownTable } from 'markdown-table'
 import {octokit} from './octokit.js'
 import {icon} from '../utils/icons.js'
@@ -21,6 +22,10 @@ const query = `
 `
 
 export const languages = token => octokit(token).graphql(query)
+.then(res => {
+  writeFileSync('assets/languages.json', JSON.stringify(res, null, 4), 'utf-8')
+  return res
+})
 .then(res => res?.user?.repositories?.nodes)
 .then(nodes => nodes?.map(node => node?.languages?.edges))
 .then(edges => edges?.reduce((acc, x) => acc.concat(x), []))

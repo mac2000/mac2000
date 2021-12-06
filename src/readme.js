@@ -5,7 +5,7 @@ import {contributions} from './github/contributions.js'
 import {wakatime} from './wakatime.js'
 
 export const readme = async (githubToken, wakatimeToken) => {
-    let md = readFileSync(new URL('template.md', import.meta.url), 'utf-8')
+    let md = readFileSync(new URL('../assets/template.md', import.meta.url), 'utf-8')
     md = md.replace('`github-contributions`', await contributions(githubToken))
     md = md.replace('`github-stats`', await stats(githubToken))
     md = md.replace('`github-languages`', await languages(githubToken))

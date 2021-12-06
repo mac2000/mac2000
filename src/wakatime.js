@@ -1,7 +1,7 @@
+import { writeFileSync } from 'fs'
 import axios from 'axios'
 import axiosRetry from 'axios-retry'
 import {icon} from './utils/icons.js'
-import {readFileSync} from 'fs'
 import { markdownTable } from 'markdown-table'
 
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay })
@@ -9,6 +9,10 @@ axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay })
 export const wakatime = token => axios
     .get(`https://wakatime.com/api/v1/users/mac/stats/last_30_days?api_key=${token}`)
     .then(response => response?.data?.data)
+    .then(data => {
+      writeFileSync('assets/wakatime.json', JSON.stringify(data, null, 4), 'utf-8')
+      return data
+    })
     .then(data => ({
         platforms: map(data?.operating_systems, 1, 10, 'platforms'),
         editors: map(data?.editors, 1, 10, 'editors'),
@@ -36,6 +40,6 @@ const map = (items, min, limit) => items
         acc[1].push(x.percent.toFixed(2) + '%')
         return acc
     }, [[], []])
-    
+
 
 // wakatime(process.env.WAKATIME_TOKEN).then(d => Object.keys(d).forEach(k => console.log(d[k] + '\n\n')))
