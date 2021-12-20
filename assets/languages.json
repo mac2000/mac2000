@@ -82,6 +82,11 @@
                             },
                             {
                                 "node": {
+                                    "name": "Python"
+                                }
+                            },
+                            {
+                                "node": {
                                     "name": "TypeScript"
                                 }
                             },
@@ -437,6 +442,62 @@
                             {
                                 "node": {
                                     "name": "PHP"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "languages": {
+                        "edges": [
+                            {
+                                "node": {
+                                    "name": "Go"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "Shell"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "TypeScript"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "Smarty"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "HCL"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "JavaScript"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "Lua"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "Dockerfile"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "Python"
+                                }
+                            },
+                            {
+                                "node": {
+                                    "name": "SCSS"
                                 }
                             }
                         ]
@@ -1683,22 +1744,6 @@
                 {
                     "languages": {
                         "edges": []
-                    }
-                },
-                {
-                    "languages": {
-                        "edges": [
-                            {
-                                "node": {
-                                    "name": "JavaScript"
-                                }
-                            },
-                            {
-                                "node": {
-                                    "name": "HTML"
-                                }
-                            }
-                        ]
                     }
                 }
             ]
