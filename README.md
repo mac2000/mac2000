@@ -2,24 +2,24 @@
 
 ### Last contributions
 
-| Repository                    | Contribution                                                                                                                      |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| BurnySc2/python-sc2           | [examples imports fix](https://github.com/BurnySc2/python-sc2/pull/116)                                                           |
-| provectus/kafka-ui            | [option to override listening port](https://github.com/provectus/kafka-ui/pull/604)                                               |
-| firebase/firebase-tools       | [💡 setup:emulators:ui](https://github.com/firebase/firebase-tools/pull/3152)                                                     |
-| spring-cloud/spring-cloud-gcp | [fixes #2514 will use given project id if any and fallback to unused](https://github.com/spring-cloud/spring-cloud-gcp/pull/2625) |
-| spring-cloud/spring-cloud-gcp | [fixes #2404 by upgrading error prone to 2.4.0](https://github.com/spring-cloud/spring-cloud-gcp/pull/2624)                       |
-| jpetazzo/wordsmith            | [Update README.en.md](https://github.com/jpetazzo/wordsmith/pull/4)                                                               |
-| cloudflare/cloudflare-gcp     | [upgrade to node 10](https://github.com/cloudflare/cloudflare-gcp/pull/45)                                                        |
-| APIs-guru/graphql-faker       | [fixes #103 voyager tab](https://github.com/APIs-guru/graphql-faker/pull/116)                                                     |
-| APIs-guru/graphql-faker       | [temporary workaround for copy issue](https://github.com/APIs-guru/graphql-faker/pull/115)                                        |
-| APIs-guru/graphql-faker       | [upgrade react to 16](https://github.com/APIs-guru/graphql-faker/pull/111)                                                        |
+| Repository                | Contribution                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------- |
+| BurnySc2/python-sc2       | [examples imports fix](https://github.com/BurnySc2/python-sc2/pull/116)                           |
+| provectus/kafka-ui        | [option to override listening port](https://github.com/provectus/kafka-ui/pull/604)               |
+| firebase/firebase-tools   | [💡 setup:emulators:ui](https://github.com/firebase/firebase-tools/pull/3152)                     |
+| jpetazzo/wordsmith        | [Update README.en.md](https://github.com/jpetazzo/wordsmith/pull/4)                               |
+| cloudflare/cloudflare-gcp | [upgrade to node 10](https://github.com/cloudflare/cloudflare-gcp/pull/45)                        |
+| APIs-guru/graphql-faker   | [fixes #103 voyager tab](https://github.com/APIs-guru/graphql-faker/pull/116)                     |
+| APIs-guru/graphql-faker   | [temporary workaround for copy issue](https://github.com/APIs-guru/graphql-faker/pull/115)        |
+| APIs-guru/graphql-faker   | [upgrade react to 16](https://github.com/APIs-guru/graphql-faker/pull/111)                        |
+| APIs-guru/graphql-voyager | [SvgPanZoom namespace workaround](https://github.com/APIs-guru/graphql-voyager/pull/165)          |
+| APIs-guru/graphql-faker   | [Make package.json scripts windows friendly](https://github.com/APIs-guru/graphql-faker/pull/102) |
 
 ### Some github stats
 
 | <img src="assets/icons/pullrequest.svg" width="24" height="24" alt="requests" title="requests" /> | <img src="assets/icons/commit.svg" width="24" height="24" alt="commits" title="commits" /> | <img src="assets/icons/issue.svg" width="24" height="24" alt="issues" title="issues" /> | <img src="assets/icons/star.svg" width="24" height="24" alt="stars" title="stars" /> | <img src="assets/icons/merge.svg" width="24" height="24" alt="contributions" title="contributions" /> |
 | :-----------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
-|                                                177                                                |                                            2840                                            |                                           133                                           |                                          48                                          |                                                  177                                                  |
+|                                                177                                                |                                            2858                                            |                                           134                                           |                                          49                                          |                                                  177                                                  |
 
 According to github stats here are languages used in repositories under my account
 
