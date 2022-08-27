@@ -7,6 +7,7 @@ on:
     branches: [ main ]
   schedule:
     - cron: '0 0 * * 0'
+  workflow_dispatch:
 jobs:
   readme:
     if: ${{ github.actor != 'actions' }}
@@ -15,7 +16,7 @@ jobs:
     steps:
       - name: git pull
         uses: actions/checkout@v2
-      
+
       - name: apt-get install -y node
         uses: actions/setup-node@v2
         with:
