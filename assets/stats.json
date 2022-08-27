@@ -1,23 +1,23 @@
 {
     "user": {
         "contributionsCollection": {
-            "totalCommitContributions": 2674,
-            "restrictedContributionsCount": 366
+            "totalCommitContributions": 2577,
+            "restrictedContributionsCount": 0
         },
         "repositoriesContributedTo": {
-            "totalCount": 172
+            "totalCount": 181
         },
         "pullRequests": {
-            "totalCount": 254
+            "totalCount": 336
         },
         "issues": {
-            "totalCount": 128
+            "totalCount": 142
         },
         "followers": {
-            "totalCount": 47
+            "totalCount": 53
         },
         "repositories": {
-            "totalCount": 180,
+            "totalCount": 186,
             "nodes": [
                 {
                     "stargazers": {
@@ -36,17 +36,17 @@
                 },
                 {
                     "stargazers": {
-                        "totalCount": 7
+                        "totalCount": 9
+                    }
+                },
+                {
+                    "stargazers": {
+                        "totalCount": 8
                     }
                 },
                 {
                     "stargazers": {
                         "totalCount": 7
-                    }
-                },
-                {
-                    "stargazers": {
-                        "totalCount": 6
                     }
                 },
                 {
@@ -56,7 +56,7 @@
                 },
                 {
                     "stargazers": {
-                        "totalCount": 3
+                        "totalCount": 4
                     }
                 },
                 {
@@ -91,7 +91,7 @@
                 },
                 {
                     "stargazers": {
-                        "totalCount": 1
+                        "totalCount": 2
                     }
                 },
                 {
@@ -196,12 +196,12 @@
                 },
                 {
                     "stargazers": {
-                        "totalCount": 0
+                        "totalCount": 1
                     }
                 },
                 {
                     "stargazers": {
-                        "totalCount": 0
+                        "totalCount": 1
                     }
                 },
                 {
