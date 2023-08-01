@@ -3,7 +3,7 @@ export const icon = (kind, key) => `<img src="${icons[kind]?.[key] || icons.fall
 export const icons = {
     languages: {
         'Java': 'https://upload.wikimedia.org/wikipedia/ru/3/39/Java_logo.svg',
-        'C#': 'https://upload.wikimedia.org/wikipedia/commons/a/a3/.NET_Logo.svg',
+        'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
         'JavaScript': 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
         'Markdown': 'https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg',
         'YAML': 'https://upload.wikimedia.org/wikipedia/commons/6/63/YAML_logo_in_SVG_format.svg',
