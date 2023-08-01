@@ -20,7 +20,7 @@ jobs:
       - name: apt-get install -y node
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 20
 
       - name: npm install
         run: npm install
