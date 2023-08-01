@@ -24,6 +24,10 @@ export const icons = {
         'Kotlin': 'https://upload.wikimedia.org/wikipedia/commons/0/06/Kotlin_Icon.svg',
         'Haskell': 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Haskell-Logo.svg',
         'Swift': 'https://cdn.worldvectorlogo.com/logos/swift-15.svg',
+        'Terraform': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg',
+        'Dockerfile': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+        'Shell': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
+        'PowerShell': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
     },
     fallback: 'https://www.svgrepo.com/show/149905/txt-file-symbol.svg',
     editors: {
