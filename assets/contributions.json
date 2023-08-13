@@ -3,6 +3,24 @@
         "edges": [
             {
                 "node": {
+                    "title": "dependabot",
+                    "url": "https://github.com/rabotaua/actions-version/pull/270",
+                    "repository": {
+                        "nameWithOwner": "rabotaua/actions-version"
+                    }
+                }
+            },
+            {
+                "node": {
+                    "title": "dependagroup",
+                    "url": "https://github.com/rabotaua/actions-kube-tools/pull/347",
+                    "repository": {
+                        "nameWithOwner": "rabotaua/actions-kube-tools"
+                    }
+                }
+            },
+            {
+                "node": {
                     "title": "outputs",
                     "url": "https://github.com/rabotaua/actions-version/pull/247",
                     "repository": {
@@ -70,24 +88,6 @@
                     "url": "https://github.com/gatsbyjs/gatsby/pull/36919",
                     "repository": {
                         "nameWithOwner": "gatsbyjs/gatsby"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "remove updates check from github action",
-                    "url": "https://github.com/trufflesecurity/trufflehog/pull/883",
-                    "repository": {
-                        "nameWithOwner": "trufflesecurity/trufflehog"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "proposal: SqlServer connection string detector",
-                    "url": "https://github.com/trufflesecurity/trufflehog/pull/867",
-                    "repository": {
-                        "nameWithOwner": "trufflesecurity/trufflehog"
                     }
                 }
             }

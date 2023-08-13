@@ -426,6 +426,11 @@
                             },
                             {
                                 "node": {
+                                    "name": "JavaScript"
+                                }
+                            },
+                            {
+                                "node": {
                                     "name": "HTML"
                                 }
                             },
@@ -437,11 +442,6 @@
                             {
                                 "node": {
                                     "name": "PowerShell"
-                                }
-                            },
-                            {
-                                "node": {
-                                    "name": "JavaScript"
                                 }
                             },
                             {
@@ -519,6 +519,11 @@
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "languages": {
+                        "edges": []
                     }
                 },
                 {
@@ -1947,27 +1952,6 @@
                             {
                                 "node": {
                                     "name": "Swift"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "languages": {
-                        "edges": [
-                            {
-                                "node": {
-                                    "name": "JavaScript"
-                                }
-                            },
-                            {
-                                "node": {
-                                    "name": "TypeScript"
-                                }
-                            },
-                            {
-                                "node": {
-                                    "name": "HTML"
                                 }
                             }
                         ]

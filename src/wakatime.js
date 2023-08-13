@@ -7,7 +7,7 @@ import { markdownTable } from 'markdown-table'
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay })
 
 export const wakatime = token => axios
-    .get(`https://wakatime.com/api/v1/users/mac/stats/last_30_days?api_key=${token}`)
+    .get(`https://wakatime.com/api/v1/users/current/stats/last_30_days?api_key=${token}`)
     .then(response => response?.data?.data)
     .then(data => {
       writeFileSync('assets/wakatime.json', JSON.stringify(data, null, 4), 'utf-8')
