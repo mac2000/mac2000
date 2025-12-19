@@ -1,33 +1,14 @@
 {
-  "name": "mac2000",
-  "version": "1.0.0",
-  "description": "<img src=\"icon.svg\" width=\"24\" />",
   "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "outdated": "npx npm-check-updates",
-    "upgrade": "npm run outdated -- -u"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mac2000/mac2000.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mac2000/mac2000/issues"
-  },
-  "homepage": "https://github.com/mac2000/mac2000#readme",
-  "devDependencies": {
-    "jest": "^29.7.0"
-  },
   "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@octokit/rest": "^20.0.2",
-    "axios": "^1.6.5",
-    "axios-retry": "^4.0.0",
-    "markdown-table": "^3.0.3"
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-stringify": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/unist": "^3.0.3"
+  },
+  "prettier": {
+    "printWidth": 400
   }
 }

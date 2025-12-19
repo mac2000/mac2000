@@ -1,35 +1,22 @@
-name: CI
-
+name: readme
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 1 * * 0"
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   readme:
-    if: ${{ github.actor != 'actions' }}
     runs-on: ubuntu-latest
-
     steps:
       - name: git pull
-        uses: actions/checkout@v3
-
-      - name: apt-get install -y node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+        uses: actions/checkout@v6
 
       - name: npm install
         run: npm install
 
-      - name: node index.js
-        run: node index.js
-        env:
-          WAKATIME_TOKEN: ${{ secrets.WAKATIME_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: node readme.mjs
+        run: node readme.mjs
 
       - run: cat README.md
 
@@ -38,8 +25,8 @@ jobs:
           git config user.name actions
           git config user.email actions@github.com
 
-      - name: git commit README.md
+      - name: git commit
         run: |
-          git add README.md
-          git commit -m "readme"
+          git add .
+          git commit -m wakatime
           git push
