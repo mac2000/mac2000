@@ -50,6 +50,52 @@ jobs:
 
           Invoke-RestMethod -Method Post "https://api.github.com/graphql" -Headers @{ Authorization = "Bearer $($env:GITHUB_TOKEN)" } -Body (ConvertTo-Json -InputObject @{ query = $query }) | Select-Object -ExpandProperty data | ConvertTo-Json -Depth 100 | Out-File assets/stats.json
 
+      - name: languages
+        shell: pwsh
+        run: |
+          $query = @"
+          {
+            user(login: "marchenko1985") {
+              repositories(ownerAffiliations: OWNER, first: 100, orderBy: {field: STARGAZERS, direction: DESC}) {
+                nodes {
+                  languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+                    edges {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          "@
+
+          Invoke-RestMethod -Method Post "https://api.github.com/graphql" -Headers @{ Authorization = "Bearer $($env:GITHUB_TOKEN)" } -Body (ConvertTo-Json -InputObject @{ query = $query }) | Select-Object -ExpandProperty data | ConvertTo-Json -Depth 100 | Out-File assets/languages.json
+
+      - name: contributions
+        shell: pwsh
+        run: |
+          $query = @"
+          {
+            search(query: "is:merged is:pr is:public archived:false author:marchenko1985", type: ISSUE, first: 10) {
+              edges {
+                node {
+                  ... on PullRequest {
+                    title
+                    url
+                    repository {
+                      nameWithOwner
+                    }
+                  }
+                }
+              }
+            }
+          }
+          "@
+
+          Invoke-RestMethod -Method Post "https://api.github.com/graphql" -Headers @{ Authorization = "Bearer $($env:GITHUB_TOKEN)" } -Body (ConvertTo-Json -InputObject @{ query = $query }) | Select-Object -ExpandProperty data | ConvertTo-Json -Depth 100 | Out-File assets/contributions.json
+
       - name: git config
         run: |
           git config user.name actions
