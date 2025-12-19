@@ -1,96 +1,96 @@
 {
-    "search": {
-        "edges": [
-            {
-                "node": {
-                    "title": "dependabot",
-                    "url": "https://github.com/rabotaua/actions-version/pull/270",
-                    "repository": {
-                        "nameWithOwner": "rabotaua/actions-version"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "dependagroup",
-                    "url": "https://github.com/rabotaua/actions-kube-tools/pull/347",
-                    "repository": {
-                        "nameWithOwner": "rabotaua/actions-kube-tools"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "outputs",
-                    "url": "https://github.com/rabotaua/actions-version/pull/247",
-                    "repository": {
-                        "nameWithOwner": "rabotaua/actions-version"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "tslint, eslint disable added to models index file",
-                    "url": "https://github.com/cyclosproject/ng-openapi-gen/pull/271",
-                    "repository": {
-                        "nameWithOwner": "cyclosproject/ng-openapi-gen"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "upgrade dependnecies",
-                    "url": "https://github.com/rabotaua/actions-kube-tools/pull/289",
-                    "repository": {
-                        "nameWithOwner": "rabotaua/actions-kube-tools"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "dockerfile support",
-                    "url": "https://github.com/rabotaua/actions-version/pull/218",
-                    "repository": {
-                        "nameWithOwner": "rabotaua/actions-version"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "data_source_github_organization: expand members",
-                    "url": "https://github.com/integrations/terraform-provider-github/pull/1588",
-                    "repository": {
-                        "nameWithOwner": "integrations/terraform-provider-github"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "retrieve publicly available emails as well",
-                    "url": "https://github.com/integrations/terraform-provider-github/pull/1557",
-                    "repository": {
-                        "nameWithOwner": "integrations/terraform-provider-github"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "filesystem support for exclude and include filters (2nd attemp)",
-                    "url": "https://github.com/trufflesecurity/trufflehog/pull/1033",
-                    "repository": {
-                        "nameWithOwner": "trufflesecurity/trufflehog"
-                    }
-                }
-            },
-            {
-                "node": {
-                    "title": "feat(gatsby-remark-embed-snippet): added csproj to language map so it will be recognized as xml",
-                    "url": "https://github.com/gatsbyjs/gatsby/pull/36919",
-                    "repository": {
-                        "nameWithOwner": "gatsbyjs/gatsby"
-                    }
-                }
-            }
-        ]
-    }
+  "search": {
+    "edges": [
+      {
+        "node": {
+          "title": "switch to new mavis tool",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/22",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "fix for docker build on macos",
+          "url": "https://github.com/APIs-guru/graphql-voyager/pull/439",
+          "repository": {
+            "nameWithOwner": "APIs-guru/graphql-voyager"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "regex",
+          "url": "https://github.com/rabotaua/Rabota.SqlClient/pull/2",
+          "repository": {
+            "nameWithOwner": "rabotaua/Rabota.SqlClient"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "Eslint9",
+          "url": "https://github.com/rabotaua/actions-version/pull/329",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-version"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "steps",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/18",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "path",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/17",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "rover",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/16",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "downgrade node to v16 because of apollo service check",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/15",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "bump",
+          "url": "https://github.com/rabotaua/actions-graphql/pull/14",
+          "repository": {
+            "nameWithOwner": "rabotaua/actions-graphql"
+          }
+        }
+      },
+      {
+        "node": {
+          "title": "github app: generate jwt with powershell",
+          "url": "https://github.com/github/docs/pull/30679",
+          "repository": {
+            "nameWithOwner": "github/docs"
+          }
+        }
+      }
+    ]
+  }
 }
