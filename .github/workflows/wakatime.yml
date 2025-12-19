@@ -1,0 +1,64 @@
+name: wakatime
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  wakatime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git pull
+        uses: actions/checkout@v6
+      - name: update assets/wakatime.json
+        shell: pwsh
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          $url = "https://wakatime.com/api/v1/users/current/stats/last_30_days?api_key=$($env:WAKATIME_API_KEY)"
+          # init request
+          $data = Invoke-RestMethod $url | Select-Object -ExpandProperty data
+
+          # expecting response with status pending
+          if ($data.status -ne "ok") {
+            Write-Host "first attempt response status was $($data.status)"
+            Write-Output "::group::response"
+            $data | ConvertTo-Json -Depth 100 | Write-Output
+            Write-Output "::endgroup::"
+            Start-Sleep -Seconds 5
+            $data = Invoke-RestMethod $url | Select-Object -ExpandProperty data
+          }
+
+          # just in case one more attempt
+          if ($data.status -ne "ok") {
+            Write-Host "second attempt response status was $($data.status)"
+            Write-Output "::group::response"
+            $data | ConvertTo-Json -Depth 100 | Write-Output
+            Write-Output "::endgroup::"
+            Start-Sleep -Seconds 5
+            $data = Invoke-RestMethod $url | Select-Object -ExpandProperty data
+          }
+
+          # if still not ok - exit
+          if ($data.status -ne "ok") {
+            Write-Output "wakatime data is not ready"
+            Write-Output "::group::response"
+            $data | ConvertTo-Json -Depth 100 | Write-Output
+            Write-Output "::endgroup::"
+            exit 1
+          }
+
+          $data | ConvertTo-Json -Depth 100 | Out-File assets/wakatime.json
+          Write-Host "wakatime data updated successfully"
+
+      - name: git config
+        run: |
+          git config user.name actions
+          git config user.email actions@github.com
+
+      - name: git commit assets/wakatime.json
+        run: |
+          git add assets/wakatime.json
+          git commit -m wakatime
+          git push
