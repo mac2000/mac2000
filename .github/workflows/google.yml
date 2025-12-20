@@ -2,44 +2,30 @@ name: google
 on:
   workflow_dispatch:
 permissions:
-  # contents: read # at moment we do not need to read repo contents
-  id-token: write # but we want to play with OIDC tokens
+  id-token: write
 jobs:
   google:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v6 # at moment we do not need to checkout repo contents
+      - run: |
+          token=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL" | jq -r .value)
 
-      # OpenID Connect
-      # OpenID Connect allows your workflows to exchange short-lived tokens directly from your cloud provider.
-      # https://docs.github.com/en/actions/concepts/security/openid-connect
+          # RFC 8693 token exchange call to Google STS
+          sts=$(curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d '{
+            "grant_type": "urn:ietf:params:oauth:grant-type:token-exchange",
+            "audience": "//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github",
+            "scope": "https://www.googleapis.com/auth/cloud-platform",
+            "requested_token_type": "urn:ietf:params:oauth:token-type:access_token",
+            "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+            "subject_token": "$token"
+          }' | jq -r .access_token)
+          echo "STS: $sts"
 
-      # Methods for requesting the OIDC token
-      # https://docs.github.com/en/actions/reference/security/oidc#methods-for-requesting-the-oidc-token
-      # states that there will be two environment variables available
+          # Call Google Cloud IAM to generate an access token for a service account
+          access_token=$(curl -s -X POST "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/marchenko1985@marchenko1985.iam.gserviceaccount.com:generateAccessToken" -H "Authorization: Bearer $sts" -H "Content-Type: application/json" -d '{
+            "scope": ["https://www.googleapis.com/auth/webmasters.readonly"]
+          }' | jq -r .accessToken)
+          echo "access_token: $access_token"
 
-      - name: ACTIONS_ID_TOKEN_REQUEST_URL
-        run: |
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
-        # ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-2-azure-eastus.actions.githubusercontent.com/152//idtoken/6a5e4506-885f-4c7b-a4cf-70f6e241634b/d78f7636-37d2-56e6-a557-10cab26cfb09?api-version=2.0
-
-      - name: ACTIONS_ID_TOKEN_REQUEST_TOKEN
-        run: |
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: $ACTIONS_ID_TOKEN_REQUEST_TOKEN" | xxd -p
-        # ACTIONS_ID_TOKEN_REQUEST_TOKEN: xxx
-
-      # which may be used to retrieve the OIDC token like so
-      - name: retrieve OIDC token
-        run: |
-          curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=HelloWorld" | jq -r .value | xxd -p
-
-      # and here is how can we retrieve token using getIDToken
-      - name: getIDToken
-        uses: actions/github-script@v8
-        with:
-          script: |
-            core.getIDToken('HelloWorld').then(token => {
-              // console.log(token) // will output: xxx
-              // trick with hex output
-              console.log(Buffer.from(token, 'utf8').toString('hex'))
-            })
+          # Call Google Search Console API
+          curl -s -H "Authorization: Bearer $access_token" https://searchconsole.googleapis.com/webmasters/v3/sites
