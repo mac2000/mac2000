@@ -7,25 +7,44 @@ jobs:
   google:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          # github token
-          token=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github" | jq -r .value)
-          echo "token: $token"
+      - uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: projects/348636136344/locations/global/workloadIdentityPools/github/providers/github
+          service_account: marchenko1985@marchenko1985.iam.gserviceaccount.com
 
-          # federated token (RFC 8693 token exchange call to Google STS)
-          sts=$(curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d "{
-            \"grant_type\": \"urn:ietf:params:oauth:grant-type:token-exchange\",
-            \"audience\": \"//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github\",
-            \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",
-            \"requested_token_type\": \"urn:ietf:params:oauth:token-type:access_token\",
-            \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",
-            \"subject_token\": \"$token\"
-          }" | jq -r .access_token)
+      # here we are installing gcloud cli, so we can easily retrieve access token
+      - uses: google-github-actions/setup-gcloud@v3
 
-          # service account access token
-          access_token=$(curl -s -X POST "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/marchenko1985@marchenko1985.iam.gserviceaccount.com:generateAccessToken" -H "Authorization: Bearer $sts" -H "Content-Type: application/json" -d '{
-            "scope": ["https://www.googleapis.com/auth/webmasters.readonly"]
-          }' | jq -r .accessToken)
+      # for sake of demonstration, check that we are signed in
+      - run: gcloud auth list
 
-          # call google search console api
-          curl -s -H "Authorization: Bearer $access_token" https://searchconsole.googleapis.com/webmasters/v3/sites
+      # example of how access token can be retrieved
+      - run: gcloud auth print-access-token
+
+      # example of calling search console api
+      - name: Call Search Console API
+        run: |
+          curl -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://searchconsole.googleapis.com/webmasters/v3/sites"
+
+      # - run: |
+      #     # github token
+      #     token=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github" | jq -r .value)
+      #     echo "token: $token"
+
+      #     # federated token (RFC 8693 token exchange call to Google STS)
+      #     sts=$(curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d "{
+      #       \"grant_type\": \"urn:ietf:params:oauth:grant-type:token-exchange\",
+      #       \"audience\": \"//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github\",
+      #       \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",
+      #       \"requested_token_type\": \"urn:ietf:params:oauth:token-type:access_token\",
+      #       \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",
+      #       \"subject_token\": \"$token\"
+      #     }" | jq -r .access_token)
+
+      #     # service account access token
+      #     access_token=$(curl -s -X POST "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/marchenko1985@marchenko1985.iam.gserviceaccount.com:generateAccessToken" -H "Authorization: Bearer $sts" -H "Content-Type: application/json" -d '{
+      #       "scope": ["https://www.googleapis.com/auth/webmasters.readonly"]
+      #     }' | jq -r .accessToken)
+
+      #     # call google search console api
+      #     curl -s -H "Authorization: Bearer $access_token" https://searchconsole.googleapis.com/webmasters/v3/sites
