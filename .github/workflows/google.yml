@@ -21,13 +21,15 @@ jobs:
       - name: ACTIONS_ID_TOKEN_REQUEST_URL
         run: |
           echo "ACTIONS_ID_TOKEN_REQUEST_URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
+        # ACTIONS_ID_TOKEN_REQUEST_URL: https://run-actions-2-azure-eastus.actions.githubusercontent.com/152//idtoken/6a5e4506-885f-4c7b-a4cf-70f6e241634b/d78f7636-37d2-56e6-a557-10cab26cfb09?api-version=2.0
 
       - name: ACTIONS_ID_TOKEN_REQUEST_TOKEN
         run: |
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: $ACTIONS_ID_TOKEN_REQUEST_TOKEN"
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: $ACTIONS_ID_TOKEN_REQUEST_TOKEN" | xxd -p
+        # ACTIONS_ID_TOKEN_REQUEST_TOKEN: xxx
 
       # which may be used to retrieve the OIDC token like so
-
       - name: retrieve OIDC token
         run: |
-          curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL"
+          curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL" | jq -r .value | xxd -p
+        # {"value":"***"}
