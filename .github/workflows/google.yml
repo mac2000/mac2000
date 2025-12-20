@@ -8,23 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/auth@v3
+        id: auth
         with:
           workload_identity_provider: projects/348636136344/locations/global/workloadIdentityPools/github/providers/github
           service_account: marchenko1985@marchenko1985.iam.gserviceaccount.com
-
-      # here we are installing gcloud cli, so we can easily retrieve access token
-      - uses: google-github-actions/setup-gcloud@v3
-
-      # for sake of demonstration, check that we are signed in
-      - run: gcloud auth list
-
-      # example of how access token can be retrieved
-      - run: gcloud auth print-access-token
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/webmasters.readonly
 
       # example of calling search console api
-      - name: Call Search Console API
-        run: |
-          curl -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://searchconsole.googleapis.com/webmasters/v3/sites"
+      - run: |
+          curl -H "Authorization: Bearer ${{ steps.auth.outputs.access_token }}" "https://searchconsole.googleapis.com/webmasters/v3/sites"
 
       # - run: |
       #     # github token
