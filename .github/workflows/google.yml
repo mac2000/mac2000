@@ -1,0 +1,33 @@
+name: google
+on:
+  workflow_dispatch:
+permissions:
+  # contents: read # at moment we do not need to read repo contents
+  id-token: write # but we want to play with OIDC tokens
+jobs:
+  search-console:
+    runs-on: ubuntu-latest
+    steps:
+      # - uses: actions/checkout@v6 # at moment we do not need to checkout repo contents
+
+      # OpenID Connect
+      # OpenID Connect allows your workflows to exchange short-lived tokens directly from your cloud provider.
+      # https://docs.github.com/en/actions/concepts/security/openid-connect
+
+      # Methods for requesting the OIDC token
+      # https://docs.github.com/en/actions/reference/security/oidc#methods-for-requesting-the-oidc-token
+      # states that there will be two environment variables available
+
+      - name: ACTIONS_ID_TOKEN_REQUEST_URL
+        run: |
+          echo "ACTIONS_ID_TOKEN_REQUEST_URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
+
+      - name: ACTIONS_ID_TOKEN_REQUEST_TOKEN
+        run: |
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: $ACTIONS_ID_TOKEN_REQUEST_TOKEN"
+
+      # which may be used to retrieve the OIDC token like so
+
+      - name: retrieve OIDC token
+        run: |
+          curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL"
