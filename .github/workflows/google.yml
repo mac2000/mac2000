@@ -12,25 +12,25 @@ jobs:
           echo "token: $token"
 
           echo STS
-          curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d '{
-            "grant_type": "urn:ietf:params:oauth:grant-type:token-exchange",
-            "audience": "//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github",
-            "scope": "https://www.googleapis.com/auth/cloud-platform",
-            "requested_token_type": "urn:ietf:params:oauth:token-type:access_token",
-            "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
-            "subject_token": "$token"
-          }'
+          curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d "{
+            \"grant_type\": \"urn:ietf:params:oauth:grant-type:token-exchange\",
+            \"audience\": \"//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github\",
+            \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",
+            \"requested_token_type\": \"urn:ietf:params:oauth:token-type:access_token\",
+            \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",
+            \"subject_token\": \"$token\"
+          }"
           echo ---
 
           # RFC 8693 token exchange call to Google STS
-          sts=$(curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d '{
-            "grant_type": "urn:ietf:params:oauth:grant-type:token-exchange",
-            "audience": "//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github",
-            "scope": "https://www.googleapis.com/auth/cloud-platform",
-            "requested_token_type": "urn:ietf:params:oauth:token-type:access_token",
-            "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
-            "subject_token": "$token"
-          }' | jq -r .access_token)
+          sts=$(curl -s -X POST https://sts.googleapis.com/v1/token -H "Content-Type: application/json" -d "{
+            \"grant_type\": \"urn:ietf:params:oauth:grant-type:token-exchange\",
+            \"audience\": \"//iam.googleapis.com/projects/348636136344/locations/global/workloadIdentityPools/github/providers/github\",
+            \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",
+            \"requested_token_type\": \"urn:ietf:params:oauth:token-type:access_token\",
+            \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",
+            \"subject_token\": \"$token\"
+          }" | jq -r .access_token)
           echo "STS: $sts"
 
           # Call Google Cloud IAM to generate an access token for a service account
