@@ -95,8 +95,8 @@
   },
   "stats": {
     "contributionsCollection": {
-      "totalCommitContributions": 257,
-      "restrictedContributionsCount": 3341
+      "totalCommitContributions": 256,
+      "restrictedContributionsCount": 3395
     },
     "repositoriesContributedTo": {
       "totalCount": 3
