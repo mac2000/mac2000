@@ -95,8 +95,8 @@
   },
   "stats": {
     "contributionsCollection": {
-      "totalCommitContributions": 256,
-      "restrictedContributionsCount": 3532
+      "totalCommitContributions": 257,
+      "restrictedContributionsCount": 3668
     },
     "repositoriesContributedTo": {
       "totalCount": 3
@@ -212,11 +212,7 @@
         null,
         null,
         null,
-        {
-          "stargazers": {
-            "totalCount": 0
-          }
-        }
+        null
       ]
     }
   },
